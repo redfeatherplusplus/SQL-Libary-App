@@ -12,7 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Cleaning Utilities", "Data Cleaning Utilities", "{2EE29BA4-E17D-45A7-B058-D9A0D51764D0}"
 	ProjectSection(SolutionItems) = preProject
 		Data Cleaning Utilities\create-library-for-MySQL.sql = Data Cleaning Utilities\create-library-for-MySQL.sql
-		Data Cleaning Utilities\data analysis.txt = Data Cleaning Utilities\data analysis.txt
 		Data Cleaning Utilities\generate_authors.py = Data Cleaning Utilities\generate_authors.py
 		Data Cleaning Utilities\generate_book.py = Data Cleaning Utilities\generate_book.py
 		Data Cleaning Utilities\generate_book_authors.py = Data Cleaning Utilities\generate_book_authors.py
