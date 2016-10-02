@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library App", "Library App\Library App.csproj", "{40A04889-A8E3-4BED-AD04-2C82411323D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library DAOs", "Library DAOs\Library DAOs.csproj", "{C830745B-3816-495E-B919-884B53FC345C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Entities", "Library Entities\Library Entities.csproj", "{DFE61C0B-F71B-40C0-8D04-C022E1868A10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Cleaning Utilities", "Data Cleaning Utilities", "{2EE29BA4-E17D-45A7-B058-D9A0D51764D0}"
+	ProjectSection(SolutionItems) = preProject
+		Data Cleaning Utilities\create-library-for-MySQL.sql = Data Cleaning Utilities\create-library-for-MySQL.sql
+		Data Cleaning Utilities\data analysis.txt = Data Cleaning Utilities\data analysis.txt
+		Data Cleaning Utilities\generate_authors.py = Data Cleaning Utilities\generate_authors.py
+		Data Cleaning Utilities\generate_book.py = Data Cleaning Utilities\generate_book.py
+		Data Cleaning Utilities\generate_book_authors.py = Data Cleaning Utilities\generate_book_authors.py
+		Data Cleaning Utilities\remove_non_printable.py = Data Cleaning Utilities\remove_non_printable.py
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40A04889-A8E3-4BED-AD04-2C82411323D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A04889-A8E3-4BED-AD04-2C82411323D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A04889-A8E3-4BED-AD04-2C82411323D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A04889-A8E3-4BED-AD04-2C82411323D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C830745B-3816-495E-B919-884B53FC345C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C830745B-3816-495E-B919-884B53FC345C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C830745B-3816-495E-B919-884B53FC345C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C830745B-3816-495E-B919-884B53FC345C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,67 @@
+Data Cleaning Process:
+Notepad++: A replace all of ',' to '^' was done so that the data could be viewed in Excel. 
+'^' was tested as an un-used char first.
+
+Excel (data quality analysis):
+Books with pagecount values of zero were noted and removed
+Invalid ISBN 10 values were noted, thus ISBN 13 was chosen.
+When sorting nummerically on ISBN13, a single invalid entry was found and removed.
+No duplicates were found on ISBN13.
+Book titles and author names appear to have random kanji inserted. 
+All columns were sorted ascending and descending to check for missing entries.
+A single invalid cover entry was found and removed.
+A few books containing dates for their publisher or no publisher were found and removed.
+A few books containing no author were removed
+A few publishers were found that had quotes in their names, and had said quotes removed.
+A few books were comparied to their counterparts in the original database to ensure that no tuple got corrupted from excel.
+
+Python (non-printable tuple removal): 
+The attached script was ran to remove tuples which conntained non-printable characters.
+
+Notepad++: A replace all was done to revert the original replace all. &amp; was replaced with &.
+
+Python: 
+After normalizing the dataset, the attached python scripts were used to generate csv files for each table. 
+Each script also performs some additional normalization, such as ignoring case sensitivity for author names.
+
+Data Mapping (Books):
+ISBN13 - varchar(13)
+Title - varchar(255)
+Author - varchar(255)
+Cover - varchar(255)
+Publisher - varchar(255)
+Pages - int
+
+Data Mapping (Borrowers):
+borrower_id - int
+ssn - varchar(11)
+first_name, last_name, email, address, city - varchar (255)
+state - varchar(2)
+phone - varchar(14)
+
+Data Mapping (Library System): 
+Card_id - borrower_id
+Date_out, Due_date, Date_in - datetime
+Loan_id - int
+Fine_amt - Decimal
+Paid - BOOL
+Availability - BOOL
+Num_Loans - Int
+
+Restrictions:
+
+If an overdue book is checked in, a FINES record should be created (see Requirement #5)
+
+Done: BORROWER Name, Ssn, and Address attribute values are required to create a new
+account (i.e. values must be NOT NULL).
+
+Done: Borrowers are allowed to possess exactly one library card. If a new borrower is attempted
+with a duplicate Ssn, then your system should reject the new BORROWER and return an
+appropriate error message.
+
+TODO: Fines may not be assessed (i.e. create a record in the FINES table) until a book is
+returned.
+
+TODO: Fines shall be assessed at a rate of $0.25/day (twenty-five cents per day).
+
+Disabled --secure-file-priv
