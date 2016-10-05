@@ -15,7 +15,17 @@ namespace Library_DAOs
             throw new NotImplementedException();
         }
 
-        public List<BookLoan> search(string cardID, BookSearchType searchType)
+        public List<BookLoan> search(string cardID, BookLoanSearchType searchType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<BookLoan> search(Book book)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<BookLoan> search(Book book, BookLoanSearchType searchType)
         {
             throw new NotImplementedException();
         }

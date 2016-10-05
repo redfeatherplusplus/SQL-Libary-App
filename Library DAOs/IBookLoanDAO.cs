@@ -13,6 +13,8 @@ namespace Library_DAOs
     public interface IBookLoanDAO
     {
         List<BookLoan> search(String cardID);
-        List<BookLoan> search(String cardID, BookSearchType searchType);
+        List<BookLoan> search(String cardID, BookLoanSearchType searchType);
+        List<BookLoan> search(Book book);
+        List<BookLoan> search(Book book, BookLoanSearchType searchType);
     }
 }
