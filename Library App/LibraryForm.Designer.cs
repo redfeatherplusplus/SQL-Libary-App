@@ -1,4 +1,4 @@
-﻿namespace SQL_Library_Project
+﻿namespace Library_App
 {
     partial class LibraryForm
     {

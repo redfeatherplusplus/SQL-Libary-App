@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Cleaning Utilities", "
 		Data Cleaning Utilities\remove_non_printable.py = Data Cleaning Utilities\remove_non_printable.py
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO Unit Tests", "DAO Unit Tests\DAO Unit Tests.csproj", "{943392DA-B997-4909-BF87-61619727EDD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library DAO Mediator", "Library DAO Mediator\Library DAO Mediator.csproj", "{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,14 @@ Global
 		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFE61C0B-F71B-40C0-8D04-C022E1868A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{943392DA-B997-4909-BF87-61619727EDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943392DA-B997-4909-BF87-61619727EDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943392DA-B997-4909-BF87-61619727EDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943392DA-B997-4909-BF87-61619727EDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

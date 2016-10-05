@@ -39,8 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LibraryDAO.cs" />
+    <Compile Include="IBookCheckingDAO.cs" />
+    <Compile Include="IBookLoanDAO.cs" />
+    <Compile Include="IBorrowerDAO.cs" />
+    <Compile Include="IFineDAO.cs" />
+    <Compile Include="Impl\BookCheckingDAO.cs" />
+    <Compile Include="Impl\BookLoanDAO.cs" />
+    <Compile Include="Impl\BorrowerDAO.cs" />
+    <Compile Include="Impl\FineDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library Entities\Library Entities.csproj">
+      <Project>{dfe61c0b-f71b-40c0-8d04-c022e1868a10}</Project>
+      <Name>Library Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

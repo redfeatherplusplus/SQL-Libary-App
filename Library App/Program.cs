@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SQL_Library_Project
+namespace Library_App
 {
     static class Program
     {

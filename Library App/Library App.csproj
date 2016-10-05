@@ -63,6 +63,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +77,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library DAOs\Library DAOs.csproj">
+      <Project>{c830745b-3816-495e-b919-884b53fc345c}</Project>
+      <Name>Library DAOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library Entities\Library Entities.csproj">
+      <Project>{dfe61c0b-f71b-40c0-8d04-c022e1868a10}</Project>
+      <Name>Library Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SQL_Library_Project
+namespace Library_App
 {
     public partial class LibraryForm : Form
     {
