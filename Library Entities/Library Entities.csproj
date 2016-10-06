@@ -42,6 +42,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="BookLoan.cs" />
     <Compile Include="Borrower.cs" />
+    <Compile Include="ExtensionMethods\ExtensionMethods.cs" />
     <Compile Include="Fine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
