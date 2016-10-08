@@ -50,12 +50,6 @@
     <Compile Include="Impl\BorrowerDAO.cs" />
     <Compile Include="Impl\FineDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQL\Queries.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SQL\Tables.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library Entities\Library Entities.csproj">
@@ -63,7 +57,9 @@
       <Name>Library Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SQL\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
