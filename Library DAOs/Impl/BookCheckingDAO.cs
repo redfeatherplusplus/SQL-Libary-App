@@ -10,7 +10,7 @@ namespace Library_DAOs
 {
     public class BookCheckingDAO : LibraryDAO, IBookCheckingDAO 
     {
-        public void checkOut(Book book, string cardID)
+        public void checkOut(string isbn, string cardID)
         {
             throw new NotImplementedException();
         }
