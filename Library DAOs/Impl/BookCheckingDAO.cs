@@ -59,10 +59,10 @@ namespace Library_DAOs
             };
             ExecuteReader(bookSearchQuery, bookReaderCallback);
 
-            foreach (Book book in books) 
-            { 
-                Console.WriteLine(book.ToString()); 
-            }
+            //foreach (Book book in books) 
+            //{ 
+            //    Console.WriteLine(book.ToString()); 
+            //}
             Console.WriteLine(books.Count);
             return books;
         }
