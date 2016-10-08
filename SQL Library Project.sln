@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Cleaning Utilities", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library DAO Mediator", "Library DAO Mediator\Library DAO Mediator.csproj", "{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO_Tests", "DAO_Tests\DAO_Tests.csproj", "{3C284D85-B7AD-467D-B3BD-00D0AAE36B12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5A5A605-6EC0-43BB-A4C9-736C8985F28F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C284D85-B7AD-467D-B3BD-00D0AAE36B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C284D85-B7AD-467D-B3BD-00D0AAE36B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C284D85-B7AD-467D-B3BD-00D0AAE36B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C284D85-B7AD-467D-B3BD-00D0AAE36B12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
