@@ -15,6 +15,7 @@ namespace Library_DAOs.SQL
             public const string Cover = "Cover";
             public const string Publisher = "Publisher";
             public const string Pages = "Pages";
+            public const string Available = "Available";
         }
 
         public class Authors

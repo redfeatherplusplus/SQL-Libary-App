@@ -32,38 +32,41 @@ namespace Library_DAOs
         {
             List<Book> books = new List<Book>();
 
-            string bookSearchQuery = Queries.BookSearch(term, searchType);
-            ReaderCallback bookReaderCallback = bookReader =>
+            string query = Queries.BookSearch(term, searchType);
+            ReaderCallback readerCallback = reader =>
             {
-                while (bookReader.Read())
+                while (reader.Read())
                 {
                     Book book = new Book();
 
-                    book.Isbn = bookReader.GetString(Tables.Book.Isbn).Trim();
+                    book.Isbn = reader.GetString(Tables.Book.Isbn).Trim();
                     
                     if (books.Contains(book)) 
                     {
                         book = books[books.IndexOf(book)];
-                        book.Authors.Add(bookReader.GetString(Tables.Authors.Name).Trim());
+                        book.Authors.Add(reader.GetString(Tables.Authors.Name).Trim());
                     }
                     else
                     {
-                        book.Title = bookReader.GetString(Tables.Book.Title).Trim();
-                        book.Cover = bookReader.GetString(Tables.Book.Cover).Trim();
-                        book.Publisher = bookReader.GetString(Tables.Book.Publisher).Trim();
-                        book.Pages = bookReader.GetInt32(Tables.Book.Pages);
-                        book.Authors.Add(bookReader.GetString(Tables.Authors.Name).Trim());
+                        book.Title = reader.GetString(Tables.Book.Title).Trim();
+                        book.Cover = reader.GetString(Tables.Book.Cover).Trim();
+                        book.Publisher = reader.GetString(Tables.Book.Publisher).Trim();
+                        book.Pages = reader.GetInt32(Tables.Book.Pages);
+                        book.Available = reader.GetBoolean(Tables.Book.Available);
+                        book.Authors.Add(reader.GetString(Tables.Authors.Name).Trim());
+                        
                         books.Add(book);
                     }
                 }
             };
-            ExecuteReader(bookSearchQuery, bookReaderCallback);
+            ExecuteReader(query, readerCallback);
 
-            //foreach (Book book in books) 
-            //{ 
-            //    Console.WriteLine(book.ToString()); 
+            //Console.WriteLine("Book Count: " + books.Count + "\n");
+            //foreach (Book book in books)
+            //{
+            //    Console.WriteLine(book.ToString());
             //}
-            Console.WriteLine(books.Count);
+
             return books;
         }
     }
