@@ -33,24 +33,37 @@ namespace Library_DAOs
             List<Book> books = new List<Book>();
 
             string bookSearchQuery = Queries.BookSearch(term, searchType);
-
-            ReaderCallback bookReaderCallback = reader =>
+            ReaderCallback bookReaderCallback = bookReader =>
             {
-                while (reader.Read())
+                while (bookReader.Read())
                 {
                     Book book = new Book();
 
-                    book.Isbn = (string)reader[Tables.Book.Isbn];
-                    book.Title = (string)reader[Tables.Book.Title];
-                    book.Cover = (string)reader[Tables.Book.Cover];
-                    book.Publisher = (string)reader[Tables.Book.Publisher];
-                    book.Pages = (int)reader[Tables.Book.Pages];
-
-                    books.Add(book);
+                    book.Isbn = bookReader.GetString(Tables.Book.Isbn).Trim();
+                    
+                    if (books.Contains(book)) 
+                    {
+                        book = books[books.IndexOf(book)];
+                        book.Authors.Add(bookReader.GetString(Tables.Authors.Name).Trim());
+                    }
+                    else
+                    {
+                        book.Title = bookReader.GetString(Tables.Book.Title).Trim();
+                        book.Cover = bookReader.GetString(Tables.Book.Cover).Trim();
+                        book.Publisher = bookReader.GetString(Tables.Book.Publisher).Trim();
+                        book.Pages = bookReader.GetInt32(Tables.Book.Pages);
+                        book.Authors.Add(bookReader.GetString(Tables.Authors.Name).Trim());
+                        books.Add(book);
+                    }
                 }
             };
-
             ExecuteReader(bookSearchQuery, bookReaderCallback);
+
+            foreach (Book book in books) 
+            { 
+                Console.WriteLine(book.ToString()); 
+            }
+            Console.WriteLine(books.Count);
             return books;
         }
     }

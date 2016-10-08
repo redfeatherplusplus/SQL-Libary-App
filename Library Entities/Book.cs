@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library_Entities
 {
-    public class Book
+    public class Book : IEquatable<Book>
     {
         private List<string> _Authors;
         private string _Isbn;
@@ -19,6 +19,16 @@ namespace Library_Entities
         public Book()
         {
             _Authors = new List<string>();
+        }
+
+        public bool Equals(Book other)
+        {
+            return this.Isbn == other.Isbn;
+        }
+
+        public override int GetHashCode()
+        {
+            return int.Parse(Isbn);
         }
 
         public override string ToString()
@@ -62,5 +72,6 @@ namespace Library_Entities
             get { return _Available; }
             set { _Available = value; }
         }
+
     }
 }

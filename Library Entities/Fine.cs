@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library_Entities
 {
-    public class Fine
+    public class Fine : IEquatable<Fine>
     {
         private string _Title;
         private double _Fine_amt;
@@ -14,6 +14,16 @@ namespace Library_Entities
         private bool _Paid;
 
         public Fine() { }
+
+        public bool Equals(Fine other)
+        {
+            return this.Loan_id == other.Loan_id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Loan_id;
+        }
 
         public override string ToString()
         {

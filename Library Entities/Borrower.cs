@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library_Entities
 {
-    public class Borrower
+    public class Borrower : IEquatable<Borrower>
     {
         private int _Card_id;
         private string _Ssn;
@@ -19,6 +19,16 @@ namespace Library_Entities
         private string _Phone;
 
         public Borrower() { }
+
+        public bool Equals(Borrower other)
+        {
+            return this.Card_id == other.Card_id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Card_id;
+        }
 
         public override string ToString()
         {

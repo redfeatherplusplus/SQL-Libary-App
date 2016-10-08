@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library_Entities
 {
-    public class BookLoan
+    public class BookLoan : IEquatable<BookLoan>
     {
         private DateTime _Date_out;
         private DateTime _Due_date;
@@ -16,6 +16,16 @@ namespace Library_Entities
         private int _Card_id;
 
         public BookLoan() { }
+
+        public bool Equals(BookLoan other)
+        {
+            return this.Loan_id == other.Loan_id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Loan_id;
+        }
 
         public override string ToString()
         {
