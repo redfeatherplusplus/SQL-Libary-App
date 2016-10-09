@@ -85,6 +85,14 @@ namespace Library_DAOs.SQL
                         "and bk.Isbn = bl.Isbn " +
                         "and isnull(bl.Date_in) " +
                         "group by bl.Loan_id ";
+                case (BookLoanSearchType.CheckedIn):
+                    return
+                        "select bl.*, bk.Title " +
+                        "from book bk, book_loans bl " +
+                        "where bl.Card_id = " + cardID + " " +
+                        "and bk.Isbn = bl.Isbn " +
+                        "and not isnull(bl.Date_in) " +
+                        "group by bl.Loan_id ";
                 default:
                     throw new ArgumentException("Invalid Book Loan Search Type: " + searchType);
             }
@@ -119,6 +127,14 @@ namespace Library_DAOs.SQL
                         "where bl.Isbn = " + book.Isbn + " " +
                         "and bk.Isbn = bl.Isbn " +
                         "and isnull(bl.Date_in) " +
+                        "group by bl.Loan_id ";
+                case (BookLoanSearchType.CheckedIn):
+                    return
+                        "select bl.*, bk.Title " +
+                        "from book bk, book_loans bl " +
+                        "where bl.Isbn = " + book.Isbn + " " +
+                        "and bk.Isbn = bl.Isbn " +
+                        "and not isnull(bl.Date_in) " +
                         "group by bl.Loan_id ";
                 default:
                     throw new ArgumentException("Invalid Book Loan Search Type: " + searchType);

@@ -36,6 +36,8 @@ namespace DAO_Tests
             //bookCheckingDAO.checkOut("9780812966626", "2");
             //bookCheckingDAO.checkOut("9780385261760", "3");
             //bookCheckingDAO.checkOut("9780590411820", "3");
+
+            //bookCheckingDAO.checkIn("4");
         }
 
         [TestMethod]
@@ -44,6 +46,10 @@ namespace DAO_Tests
             bookLoanDAO.search("1", BookLoanSearchType.Both);
             bookLoanDAO.search("2", BookLoanSearchType.Both);
             bookLoanDAO.search("3", BookLoanSearchType.Both);
+
+            bookLoanDAO.search("1", BookLoanSearchType.CheckedIn);
+            bookLoanDAO.search("2", BookLoanSearchType.CheckedIn);
+            bookLoanDAO.search("3", BookLoanSearchType.CheckedIn);
 
             Book book = new Book();
             book.Isbn = "9780892838981";
