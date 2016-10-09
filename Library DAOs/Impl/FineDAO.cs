@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Library_Entities;
+using Library_DAOs.SQL;
 
 namespace Library_DAOs
 {
@@ -12,17 +13,37 @@ namespace Library_DAOs
     {
         public void setPaid(Fine fine)
         {
-            throw new NotImplementedException();
+            string query = Queries.FineSetPaid(fine);
+            ExecuteNonQuery(query);
         }
 
         public List<Fine> search(string cardID)
         {
-            throw new NotImplementedException();
+            return search(cardID, FineSearchType.Unpaid);
         }
 
         public List<Fine> search(string cardID, FineSearchType searchType)
         {
-            throw new NotImplementedException();
+            List<Fine> fines = new List<Fine>();
+
+            string query = Queries.FineSearch(cardID, searchType);
+            ReaderCallback readerCallback = reader =>
+            {
+                while (reader.Read())
+                {
+                    Fine fine = new Fine();
+
+                    fine.Title = reader.GetString(Tables.Book.Title).Trim();
+                    fine.Fine_amt = reader.GetDecimal(Tables.Fines.Fine_amt);
+                    fine.Loan_id = reader.GetInt32(Tables.Fines.Loan_id);
+                    fine.Paid = reader.GetBoolean(Tables.Fines.Paid);
+
+                    fines.Add(fine);
+                }
+            };
+            ExecuteReader(query, readerCallback);
+
+            return fines;
         }
     }
 }

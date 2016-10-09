@@ -9,7 +9,7 @@ namespace Library_Entities
     public class Fine : IEquatable<Fine>
     {
         private string _Title;
-        private double _Fine_amt;
+        private decimal _Fine_amt;
         private int _Loan_id;
         private bool _Paid;
 
@@ -36,7 +36,7 @@ namespace Library_Entities
             get { return _Title; }
             set { _Title = value; }
         }
-        public double Fine_amt
+        public decimal Fine_amt
         {
             get { return _Fine_amt; }
             set { _Fine_amt = value; }

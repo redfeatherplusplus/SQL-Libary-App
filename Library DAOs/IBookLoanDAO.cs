@@ -8,7 +8,7 @@ using Library_Entities;
 
 namespace Library_DAOs
 {
-    public enum BookLoanSearchType { Overdue, NotOverDue, Both };
+    public enum BookLoanSearchType { Overdue, NotOverdue, Both };
 
     public interface IBookLoanDAO
     {

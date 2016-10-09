@@ -15,12 +15,14 @@ namespace Library_DAOs
     {
         public void checkOut(string isbn, string cardID)
         {
-            throw new NotImplementedException();
+            string query = Queries.BookCheckOut(isbn, cardID);
+            ExecuteNonQuery(query);
         }
 
-        public void checkIn(Book book, string cardID)
+        public void checkIn(string loanID)
         {
-            throw new NotImplementedException();
+            string query = Queries.BookCheckIn(loanID);
+            ExecuteNonQuery(query);
         }
 
         public List<Book> search(string term)
@@ -60,12 +62,6 @@ namespace Library_DAOs
                 }
             };
             ExecuteReader(query, readerCallback);
-
-            //Console.WriteLine("Book Count: " + books.Count + "\n");
-            //foreach (Book book in books)
-            //{
-            //    Console.WriteLine(book.ToString());
-            //}
 
             return books;
         }

@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Library_Entities;
+using Library_DAOs.SQL;
 
 namespace Library_DAOs
 {
     public class BorrowerDAO : LibraryDAO, IBorrowerDAO
     {
-        public void addEntry(Borrower borrower)
+        public void insert(Borrower borrower)
         {
-            throw new NotImplementedException();
+            string query = Queries.BorrowerInsert(borrower);
+            ExecuteNonQuery(query);
         }
     }
 }

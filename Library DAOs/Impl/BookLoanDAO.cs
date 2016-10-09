@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Library_Entities;
+using Library_DAOs.SQL;
 
 namespace Library_DAOs
 {
@@ -12,22 +13,66 @@ namespace Library_DAOs
     {
         public List<BookLoan> search(string cardID)
         {
-            throw new NotImplementedException();
+            return search(cardID, BookLoanSearchType.Overdue);
         }
 
         public List<BookLoan> search(string cardID, BookLoanSearchType searchType)
         {
-            throw new NotImplementedException();
+            List<BookLoan> bookLoans = new List<BookLoan>();
+
+            string query = Queries.BookLoanSearch(cardID, searchType);
+            ReaderCallback readerCallback = reader =>
+            {
+                while (reader.Read())
+                {
+                    BookLoan bookLoan = new BookLoan();
+
+                    bookLoan.Date_out = reader.GetDateTime(Tables.BookLoans.Date_out);
+                    bookLoan.Due_date = reader.GetDateTime(Tables.BookLoans.Due_date);
+                    bookLoan.Date_in = reader.GetDateTime(Tables.BookLoans.Date_in);
+                    bookLoan.Isbn = reader.GetString(Tables.BookLoans.Isbn).Trim();
+                    bookLoan.Title = reader.GetString(Tables.Book.Title).Trim();
+                    bookLoan.Loan_id = reader.GetInt32(Tables.BookLoans.Loan_id);
+                    bookLoan.Card_id = reader.GetInt32(Tables.BookLoans.Card_id);
+
+                    bookLoans.Add(bookLoan);
+                }
+            };
+            ExecuteReader(query, readerCallback);
+
+            return bookLoans;
         }
 
         public List<BookLoan> search(Book book)
         {
-            throw new NotImplementedException();
+            return search(book, BookLoanSearchType.Overdue);
         }
 
         public List<BookLoan> search(Book book, BookLoanSearchType searchType)
         {
-            throw new NotImplementedException();
+            List<BookLoan> bookLoans = new List<BookLoan>();
+
+            string query = Queries.BookLoanSearch(book, searchType);
+            ReaderCallback readerCallback = reader =>
+            {
+                while (reader.Read())
+                {
+                    BookLoan bookLoan = new BookLoan();
+
+                    bookLoan.Date_out = reader.GetDateTime(Tables.BookLoans.Date_out);
+                    bookLoan.Due_date = reader.GetDateTime(Tables.BookLoans.Due_date);
+                    bookLoan.Date_in = reader.GetDateTime(Tables.BookLoans.Date_in);
+                    bookLoan.Isbn = reader.GetString(Tables.BookLoans.Isbn).Trim();
+                    bookLoan.Title = reader.GetString(Tables.Book.Title).Trim();
+                    bookLoan.Loan_id = reader.GetInt32(Tables.BookLoans.Loan_id);
+                    bookLoan.Card_id = reader.GetInt32(Tables.BookLoans.Card_id);
+
+                    bookLoans.Add(bookLoan);
+                }
+            };
+            ExecuteReader(query, readerCallback);
+
+            return bookLoans;
         }
     }
 }

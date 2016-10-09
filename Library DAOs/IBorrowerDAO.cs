@@ -10,6 +10,6 @@ namespace Library_DAOs
 {
     public interface IBorrowerDAO
     {
-        void addEntry(Borrower borrower);
+        void insert(Borrower borrower);
     }
 }

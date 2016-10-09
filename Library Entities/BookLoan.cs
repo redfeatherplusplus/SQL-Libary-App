@@ -12,6 +12,7 @@ namespace Library_Entities
         private DateTime _Due_date;
         private DateTime _Date_in;        
         private string _Isbn;
+        private string _Title;
         private int _Loan_id;
         private int _Card_id;
 
@@ -52,6 +53,11 @@ namespace Library_Entities
         {
             get { return _Isbn; }
             set { _Isbn = value; }
+        }
+        public string Title
+        {
+            get { return _Title; }
+            set { _Title = value; }
         }
         public int Loan_id
         {

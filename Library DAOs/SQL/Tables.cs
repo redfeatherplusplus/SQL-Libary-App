@@ -24,7 +24,7 @@ namespace Library_DAOs.SQL
             public const string Name = "Name";
         }
 
-        public class Book_Authors
+        public class BookAuthors
         {
             public const string Author_id = "Author_id";
             public const string Isbn = "Isbn";
@@ -44,12 +44,12 @@ namespace Library_DAOs.SQL
 
         }
 
-        public class Book_Loans
+        public class BookLoans
         {
             public const string Loan_id = "Loan_id";
             public const string Isbn = "Isbn";
             public const string Card_id = "Card_id";
-            public const string Date_Out = "Date_out";
+            public const string Date_out = "Date_out";
             public const string Due_date = "Due_date";
             public const string Date_in = "Date_in";
         }
