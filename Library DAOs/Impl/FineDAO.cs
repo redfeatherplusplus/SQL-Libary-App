@@ -43,6 +43,12 @@ namespace Library_DAOs
             };
             ExecuteReader(query, readerCallback);
 
+            Console.WriteLine("Fine Count: " + fines.Count + "\n");
+            foreach (Fine fine in fines)
+            {
+                Console.WriteLine(fine.ToString());
+            }
+
             return fines;
         }
     }

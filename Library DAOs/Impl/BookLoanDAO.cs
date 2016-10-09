@@ -29,7 +29,7 @@ namespace Library_DAOs
 
                     bookLoan.Date_out = reader.GetDateTime(Tables.BookLoans.Date_out);
                     bookLoan.Due_date = reader.GetDateTime(Tables.BookLoans.Due_date);
-                    bookLoan.Date_in = reader.GetDateTime(Tables.BookLoans.Date_in);
+                    bookLoan.Date_in = null;
                     bookLoan.Isbn = reader.GetString(Tables.BookLoans.Isbn).Trim();
                     bookLoan.Title = reader.GetString(Tables.Book.Title).Trim();
                     bookLoan.Loan_id = reader.GetInt32(Tables.BookLoans.Loan_id);
@@ -39,6 +39,12 @@ namespace Library_DAOs
                 }
             };
             ExecuteReader(query, readerCallback);
+
+            Console.WriteLine("BookLoan Count: " + bookLoans.Count + "\n");
+            foreach (BookLoan bookLoan in bookLoans)
+            {
+                Console.WriteLine(bookLoan.ToString());
+            }
 
             return bookLoans;
         }
@@ -61,7 +67,7 @@ namespace Library_DAOs
 
                     bookLoan.Date_out = reader.GetDateTime(Tables.BookLoans.Date_out);
                     bookLoan.Due_date = reader.GetDateTime(Tables.BookLoans.Due_date);
-                    bookLoan.Date_in = reader.GetDateTime(Tables.BookLoans.Date_in);
+                    bookLoan.Date_in = null;
                     bookLoan.Isbn = reader.GetString(Tables.BookLoans.Isbn).Trim();
                     bookLoan.Title = reader.GetString(Tables.Book.Title).Trim();
                     bookLoan.Loan_id = reader.GetInt32(Tables.BookLoans.Loan_id);
@@ -71,6 +77,12 @@ namespace Library_DAOs
                 }
             };
             ExecuteReader(query, readerCallback);
+
+            Console.WriteLine("BookLoan Count: " + bookLoans.Count + "\n");
+            foreach (BookLoan bookLoan in bookLoans)
+            {
+                Console.WriteLine(bookLoan.ToString());
+            }
 
             return bookLoans;
         }

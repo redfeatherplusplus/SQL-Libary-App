@@ -8,9 +8,9 @@ namespace Library_Entities
 {
     public class BookLoan : IEquatable<BookLoan>
     {
-        private DateTime _Date_out;
-        private DateTime _Due_date;
-        private DateTime _Date_in;        
+        private DateTime? _Date_out;
+        private DateTime? _Due_date;
+        private DateTime? _Date_in;        
         private string _Isbn;
         private string _Title;
         private int _Loan_id;
@@ -34,17 +34,17 @@ namespace Library_Entities
         }
 
         //getters and setters
-        public DateTime Date_out
+        public DateTime? Date_out
         {
             get { return _Date_out; }
             set { _Date_out = value; }
         }
-        public DateTime Due_date
+        public DateTime? Due_date
         {
             get { return _Due_date; }
             set { _Due_date = value; }
         }
-        public DateTime Date_in
+        public DateTime? Date_in
         {
             get { return _Date_in; }
             set { _Date_in = value; }

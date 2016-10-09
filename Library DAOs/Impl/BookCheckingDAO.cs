@@ -63,6 +63,12 @@ namespace Library_DAOs
             };
             ExecuteReader(query, readerCallback);
 
+            Console.WriteLine("Book Count: " + books.Count + "\n");
+            foreach (Book book in books)
+            {
+                Console.WriteLine(book.ToString());
+            }
+
             return books;
         }
     }
