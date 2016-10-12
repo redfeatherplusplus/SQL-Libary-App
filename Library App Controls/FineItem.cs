@@ -14,6 +14,8 @@ namespace Library_App_Controls
 {
     public partial class FineItem : UserControl
     {
+        private Fine fine;
+
         public FineItem()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace Library_App_Controls
         {
             InitializeComponent();
 
+            this.fine = fine;
             this.bookNameGroupBox.Text = fine.Title;
             this.fineAmount.Text = fine.Fine_amt.ToString();
             this.loanID.Text = fine.Loan_id.ToString();

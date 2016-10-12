@@ -39,9 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO_ErrorHandler.cs" />
     <Compile Include="DAO_Mediator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library DAOs\Library DAOs.csproj">
+      <Project>{c830745b-3816-495e-b919-884b53fc345c}</Project>
+      <Name>Library DAOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library Entities\Library Entities.csproj">
+      <Project>{dfe61c0b-f71b-40c0-8d04-c022e1868a10}</Project>
+      <Name>Library Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

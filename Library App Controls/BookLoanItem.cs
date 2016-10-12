@@ -14,6 +14,8 @@ namespace Library_App_Controls
 {
     public partial class BookLoanItem : UserControl
     {
+        private BookLoan bookLoan;
+
         public BookLoanItem()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace Library_App_Controls
         {
             InitializeComponent();
 
+            this.bookLoan = bookLoan;
             this.bookNameGroupBox.Text = bookLoan.Title;
             this.dateOut.Text = null != bookLoan.Date_out ?
                 bookLoan.Date_out.ToString() : "";

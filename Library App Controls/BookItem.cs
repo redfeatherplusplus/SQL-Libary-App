@@ -14,6 +14,8 @@ namespace Library_App_Controls
 {
     public partial class BookItem: UserControl
     {
+        private Book book;
+
         public BookItem()
         {
             InitializeComponent();
@@ -30,7 +32,8 @@ namespace Library_App_Controls
                 bookAuthors.Append(author + ", ");
             }
             bookAuthors.Remove(bookAuthors.Length - 2, 2);
-            
+
+            this.book = book;
             this.bookNameGroupBox.Text = book.Title;
             this.authors.Text = bookAuthors.ToString();
             this.isbn.Text = book.Isbn;

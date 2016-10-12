@@ -11,9 +11,9 @@ namespace Library_DAOs
 {
     public class FineDAO : LibraryDAO, IFineDAO
     {
-        public void setPaid(Fine fine)
+        public void setPaid(string loanID)
         {
-            string query = Queries.FineSetPaid(fine);
+            string query = Queries.FineSetPaid(loanID);
             ExecuteNonQuery(query);
         }
 

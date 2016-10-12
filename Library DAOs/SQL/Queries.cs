@@ -157,12 +157,12 @@ namespace Library_DAOs.SQL
                 (null != borrower.Phone ? "\"" + borrower.Phone + "\"" : "null") + ") ";
         }
 
-        public static string FineSetPaid(Fine fine)
+        public static string FineSetPaid(string loanID)
         {
             return
                 "update fines " +
                 "set Paid = true " +
-                "where Loan_id = " + fine.Loan_id + " ";
+                "where Loan_id = " + loanID + " ";
         }
 
         public static string FineSearch(string cardID, FineSearchType searchType)
