@@ -50,6 +50,13 @@ namespace Library_DAOs.SQL
                         "where bk.Isbn = ba.Isbn " +
                         "and ba.Author_id = au.Author_id " +
                         "and (au.Name like \"%" + term + "%\") ";
+                case (BookSearchType.Isbn):
+                    return
+                        "select bk.*, au.Name " +
+                        "from book bk, authors au, book_authors ba " +
+                        "where bk.Isbn = ba.Isbn " +
+                        "and ba.Author_id = au.Author_id " +
+                        "and bk.Isbn = " + term + ") ";
                 default:
                     throw new ArgumentException("Invalid Book Search Type: " + searchType);
             }

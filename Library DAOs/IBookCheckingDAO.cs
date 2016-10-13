@@ -8,7 +8,7 @@ using Library_Entities;
 
 namespace Library_DAOs
 {
-    public enum BookSearchType { Author, Title, Both };
+    public enum BookSearchType { Author, Title, Both, Isbn };
 
     public interface IBookCheckingDAO
     {

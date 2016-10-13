@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.bookNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.availableLabel = new System.Windows.Forms.Label();
+            this.availableCheckBox = new System.Windows.Forms.CheckBox();
+            this.publisher = new System.Windows.Forms.Label();
+            this.publisherLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
             this.isbn = new System.Windows.Forms.Label();
             this.authors = new System.Windows.Forms.Label();
             this.AuthorsLabel = new System.Windows.Forms.Label();
-            this.publisherLabel = new System.Windows.Forms.Label();
-            this.publisher = new System.Windows.Forms.Label();
-            this.availableCheckBox = new System.Windows.Forms.CheckBox();
-            this.availableLabel = new System.Windows.Forms.Label();
             this.bookNameGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,10 +55,48 @@
             this.bookNameGroupBox.Controls.Add(this.AuthorsLabel);
             this.bookNameGroupBox.Location = new System.Drawing.Point(0, 0);
             this.bookNameGroupBox.Name = "bookNameGroupBox";
-            this.bookNameGroupBox.Size = new System.Drawing.Size(523, 59);
+            this.bookNameGroupBox.Size = new System.Drawing.Size(523, 60);
             this.bookNameGroupBox.TabIndex = 0;
             this.bookNameGroupBox.TabStop = false;
             this.bookNameGroupBox.Text = "Book Name";
+            // 
+            // availableLabel
+            // 
+            this.availableLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.availableLabel.AutoSize = true;
+            this.availableLabel.Location = new System.Drawing.Point(373, 40);
+            this.availableLabel.Name = "availableLabel";
+            this.availableLabel.Size = new System.Drawing.Size(56, 13);
+            this.availableLabel.TabIndex = 7;
+            this.availableLabel.Text = "Available: ";
+            // 
+            // availableCheckBox
+            // 
+            this.availableCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.availableCheckBox.AutoSize = true;
+            this.availableCheckBox.Enabled = false;
+            this.availableCheckBox.Location = new System.Drawing.Point(435, 40);
+            this.availableCheckBox.Name = "availableCheckBox";
+            this.availableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.availableCheckBox.TabIndex = 6;
+            this.availableCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // publisher
+            // 
+            this.publisher.AutoSize = true;
+            this.publisher.Location = new System.Drawing.Point(69, 43);
+            this.publisher.Name = "publisher";
+            this.publisher.Size = new System.Drawing.Size(0, 13);
+            this.publisher.TabIndex = 5;
+            // 
+            // publisherLabel
+            // 
+            this.publisherLabel.AutoSize = true;
+            this.publisherLabel.Location = new System.Drawing.Point(7, 43);
+            this.publisherLabel.Name = "publisherLabel";
+            this.publisherLabel.Size = new System.Drawing.Size(56, 13);
+            this.publisherLabel.TabIndex = 4;
+            this.publisherLabel.Text = "Publisher: ";
             // 
             // isbnLabel
             // 
@@ -80,11 +118,11 @@
             this.isbn.TabIndex = 2;
             this.isbn.Text = "9999999999999";
             // 
-            // AuthorsText
+            // authors
             // 
             this.authors.AutoSize = true;
             this.authors.Location = new System.Drawing.Point(62, 20);
-            this.authors.Name = "AuthorsText";
+            this.authors.Name = "authors";
             this.authors.Size = new System.Drawing.Size(0, 13);
             this.authors.TabIndex = 1;
             // 
@@ -97,50 +135,13 @@
             this.AuthorsLabel.TabIndex = 0;
             this.AuthorsLabel.Text = "Authors: ";
             // 
-            // publisherLabel
-            // 
-            this.publisherLabel.AutoSize = true;
-            this.publisherLabel.Location = new System.Drawing.Point(7, 43);
-            this.publisherLabel.Name = "publisherLabel";
-            this.publisherLabel.Size = new System.Drawing.Size(56, 13);
-            this.publisherLabel.TabIndex = 4;
-            this.publisherLabel.Text = "Publisher: ";
-            // 
-            // publisher
-            // 
-            this.publisher.AutoSize = true;
-            this.publisher.Location = new System.Drawing.Point(69, 43);
-            this.publisher.Name = "publisher";
-            this.publisher.Size = new System.Drawing.Size(0, 13);
-            this.publisher.TabIndex = 5;
-            // 
-            // availableCheckBox
-            // 
-            this.availableCheckBox.AutoSize = true;
-            this.availableCheckBox.Enabled = false;
-            this.availableCheckBox.Location = new System.Drawing.Point(435, 40);
-            this.availableCheckBox.Name = "availableCheckBox";
-            this.availableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.availableCheckBox.TabIndex = 6;
-            this.availableCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // availableLabel
-            // 
-            this.availableLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.availableLabel.AutoSize = true;
-            this.availableLabel.Location = new System.Drawing.Point(373, 40);
-            this.availableLabel.Name = "availableLabel";
-            this.availableLabel.Size = new System.Drawing.Size(56, 13);
-            this.availableLabel.TabIndex = 7;
-            this.availableLabel.Text = "Available: ";
-            // 
             // BookItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.bookNameGroupBox);
             this.Name = "BookItem";
-            this.Size = new System.Drawing.Size(523, 59);
+            this.Size = new System.Drawing.Size(523, 60);
             this.bookNameGroupBox.ResumeLayout(false);
             this.bookNameGroupBox.PerformLayout();
             this.ResumeLayout(false);

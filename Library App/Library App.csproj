@@ -79,6 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library App Controls\Library App Controls.csproj">
+      <Project>{2F70EDD3-3E6A-4D7A-9DD4-38A228E98FEB}</Project>
+      <Name>Library App Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library DAOs\Library DAOs.csproj">
       <Project>{c830745b-3816-495e-b919-884b53fc345c}</Project>
       <Name>Library DAOs</Name>

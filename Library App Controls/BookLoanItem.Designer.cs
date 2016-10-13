@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.bookNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.loanID = new System.Windows.Forms.Label();
+            this.cardID = new System.Windows.Forms.Label();
+            this.isbn = new System.Windows.Forms.Label();
             this.loanIDLabel = new System.Windows.Forms.Label();
             this.cardIDLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
@@ -38,14 +41,14 @@
             this.dateInLabel = new System.Windows.Forms.Label();
             this.dueDateLabel = new System.Windows.Forms.Label();
             this.dateOutLabel = new System.Windows.Forms.Label();
-            this.isbn = new System.Windows.Forms.Label();
-            this.cardID = new System.Windows.Forms.Label();
-            this.loanID = new System.Windows.Forms.Label();
             this.bookNameGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // bookNameGroupBox
             // 
+            this.bookNameGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bookNameGroupBox.Controls.Add(this.loanID);
             this.bookNameGroupBox.Controls.Add(this.cardID);
             this.bookNameGroupBox.Controls.Add(this.isbn);
@@ -60,13 +63,41 @@
             this.bookNameGroupBox.Controls.Add(this.dateOutLabel);
             this.bookNameGroupBox.Location = new System.Drawing.Point(0, 0);
             this.bookNameGroupBox.Name = "bookNameGroupBox";
-            this.bookNameGroupBox.Size = new System.Drawing.Size(523, 59);
+            this.bookNameGroupBox.Size = new System.Drawing.Size(523, 60);
             this.bookNameGroupBox.TabIndex = 0;
             this.bookNameGroupBox.TabStop = false;
             this.bookNameGroupBox.Text = "Book Name";
             // 
+            // loanID
+            // 
+            this.loanID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loanID.AutoSize = true;
+            this.loanID.Location = new System.Drawing.Point(419, 43);
+            this.loanID.Name = "loanID";
+            this.loanID.Size = new System.Drawing.Size(0, 13);
+            this.loanID.TabIndex = 12;
+            // 
+            // cardID
+            // 
+            this.cardID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardID.AutoSize = true;
+            this.cardID.Location = new System.Drawing.Point(419, 29);
+            this.cardID.Name = "cardID";
+            this.cardID.Size = new System.Drawing.Size(0, 13);
+            this.cardID.TabIndex = 11;
+            // 
+            // isbn
+            // 
+            this.isbn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.isbn.AutoSize = true;
+            this.isbn.Location = new System.Drawing.Point(419, 16);
+            this.isbn.Name = "isbn";
+            this.isbn.Size = new System.Drawing.Size(0, 13);
+            this.isbn.TabIndex = 10;
+            // 
             // loanIDLabel
             // 
+            this.loanIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loanIDLabel.AutoSize = true;
             this.loanIDLabel.Location = new System.Drawing.Point(367, 43);
             this.loanIDLabel.Name = "loanIDLabel";
@@ -76,6 +107,7 @@
             // 
             // cardIDLabel
             // 
+            this.cardIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cardIDLabel.AutoSize = true;
             this.cardIDLabel.Location = new System.Drawing.Point(367, 29);
             this.cardIDLabel.Name = "cardIDLabel";
@@ -85,6 +117,7 @@
             // 
             // isbnLabel
             // 
+            this.isbnLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.isbnLabel.AutoSize = true;
             this.isbnLabel.Location = new System.Drawing.Point(367, 16);
             this.isbnLabel.Name = "isbnLabel";
@@ -143,37 +176,14 @@
             this.dateOutLabel.TabIndex = 0;
             this.dateOutLabel.Text = "Date out: ";
             // 
-            // Isbn
-            // 
-            this.isbn.AutoSize = true;
-            this.isbn.Location = new System.Drawing.Point(419, 16);
-            this.isbn.Name = "Isbn";
-            this.isbn.Size = new System.Drawing.Size(0, 13);
-            this.isbn.TabIndex = 10;
-            // 
-            // cardID
-            // 
-            this.cardID.AutoSize = true;
-            this.cardID.Location = new System.Drawing.Point(419, 29);
-            this.cardID.Name = "cardID";
-            this.cardID.Size = new System.Drawing.Size(0, 13);
-            this.cardID.TabIndex = 11;
-            // 
-            // LoanID
-            // 
-            this.loanID.AutoSize = true;
-            this.loanID.Location = new System.Drawing.Point(419, 43);
-            this.loanID.Name = "LoanID";
-            this.loanID.Size = new System.Drawing.Size(0, 13);
-            this.loanID.TabIndex = 12;
-            // 
             // BookLoanItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.bookNameGroupBox);
             this.Name = "BookLoanItem";
-            this.Size = new System.Drawing.Size(523, 59);
+            this.Size = new System.Drawing.Size(523, 60);
             this.bookNameGroupBox.ResumeLayout(false);
             this.bookNameGroupBox.PerformLayout();
             this.ResumeLayout(false);
