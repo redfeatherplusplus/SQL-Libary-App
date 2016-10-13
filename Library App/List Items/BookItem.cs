@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 using Library_Entities;
 
-namespace Library_App_Controls
+namespace Library_App
 {
     public partial class BookItem: UserControl
     {
+        private LibraryForm parent;
         private Book book;
 
-        public BookItem()
+        public BookItem(LibraryForm parent)
         {
             InitializeComponent();
+
+            this.parent = parent;
         }
 
-        public BookItem(Book book)
+        public BookItem(Book book, LibraryForm parent)
         {
             InitializeComponent();
 
@@ -33,7 +36,9 @@ namespace Library_App_Controls
             }
             bookAuthors.Remove(bookAuthors.Length - 2, 2);
 
+            this.parent = parent;
             this.book = book;
+
             this.bookNameGroupBox.Text = book.Title;
             this.authors.Text = bookAuthors.ToString();
             this.isbn.Text = book.Isbn;
@@ -41,7 +46,7 @@ namespace Library_App_Controls
             this.availableCheckBox.Checked = book.Available;
         }
 
-        private void selectedRadioButon_CheckedChanged(object sender, EventArgs e)
+        private void selectedRadioButon_Click(object sender, EventArgs e)
         {
             //deselect all other items in the parent
             foreach (Control control in Parent.Controls)
@@ -51,8 +56,17 @@ namespace Library_App_Controls
                 {
                     item.selectedRadioButon.Checked = false;
                 }
+                this.selectedRadioButon.Checked = true;
             }
-            this.selectedRadioButon.Checked = true;
+
+            parent.BookItem = this;
+        }
+
+        //getters and setters
+        public Book Book
+        {
+            get { return book; }
+            set { book = value; }
         }
     }
 }

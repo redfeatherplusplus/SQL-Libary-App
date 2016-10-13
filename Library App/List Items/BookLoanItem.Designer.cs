@@ -1,4 +1,4 @@
-﻿namespace Library_App_Controls
+﻿namespace Library_App
 {
     partial class BookLoanItem
     {
@@ -191,11 +191,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.Controls.Add(this.selectedRadioButon);
             this.Controls.Add(this.bookNameGroupBox);
             this.Name = "BookLoanItem";
             this.Size = new System.Drawing.Size(530, 60);
+            this.Click += new System.EventHandler(this.BookLoanItem_Click);
             this.bookNameGroupBox.ResumeLayout(false);
             this.bookNameGroupBox.PerformLayout();
             this.ResumeLayout(false);

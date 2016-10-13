@@ -10,22 +10,27 @@ using System.Windows.Forms;
 
 using Library_Entities;
 
-namespace Library_App_Controls
+namespace Library_App
 {
     public partial class BookLoanItem : UserControl
     {
+        private LibraryForm parent;
         private BookLoan bookLoan;
 
-        public BookLoanItem()
+        public BookLoanItem(LibraryForm parent)
         {
             InitializeComponent();
+
+            this.parent = parent;
         }
 
-        public BookLoanItem(BookLoan bookLoan)
+        public BookLoanItem(BookLoan bookLoan, LibraryForm parent)
         {
             InitializeComponent();
 
+            this.parent = parent;
             this.bookLoan = bookLoan;
+
             this.bookNameGroupBox.Text = bookLoan.Title;
             this.dateOut.Text = null != bookLoan.Date_out ?
                 bookLoan.Date_out.ToString() : "";
@@ -36,6 +41,29 @@ namespace Library_App_Controls
             this.isbn.Text = bookLoan.Isbn;
             this.loanID.Text = bookLoan.Loan_id.ToString();
             this.cardID.Text = bookLoan.Card_id.ToString();
+        }
+
+        private void BookLoanItem_Click(object sender, EventArgs e)
+        {
+            //deselect all other items in the parent
+            foreach (Control control in Parent.Controls)
+            {
+                BookLoanItem item = control as BookLoanItem;
+                if (null != item)
+                {
+                    item.selectedRadioButon.Checked = false;
+                }
+                this.selectedRadioButon.Checked = true;
+            }
+
+            parent.BookLoanItem = this;
+        }
+
+        //getters and setters
+        public BookLoan BookLoan
+        {
+            get { return bookLoan; }
+            set { bookLoan = value; }
         }
     }
 }

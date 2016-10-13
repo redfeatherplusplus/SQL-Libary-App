@@ -1,4 +1,4 @@
-﻿namespace Library_App_Controls
+﻿namespace Library_App
 {
     partial class BookItem
     {
@@ -145,7 +145,7 @@
             this.selectedRadioButon.TabIndex = 1;
             this.selectedRadioButon.TabStop = true;
             this.selectedRadioButon.UseVisualStyleBackColor = true;
-            this.selectedRadioButon.CheckedChanged += new System.EventHandler(this.selectedRadioButon_CheckedChanged);
+            this.selectedRadioButon.Click += new System.EventHandler(this.selectedRadioButon_Click);
             // 
             // BookItem
             // 

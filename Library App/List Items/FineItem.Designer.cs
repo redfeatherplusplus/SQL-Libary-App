@@ -1,4 +1,4 @@
-﻿namespace Library_App_Controls
+﻿namespace Library_App
 {
     partial class FineItem
     {
@@ -119,6 +119,7 @@
             this.selectedRadioButon.TabIndex = 3;
             this.selectedRadioButon.TabStop = true;
             this.selectedRadioButon.UseVisualStyleBackColor = true;
+            this.selectedRadioButon.Click += new System.EventHandler(this.selectedRadioButon_Click);
             // 
             // FineItem
             // 
