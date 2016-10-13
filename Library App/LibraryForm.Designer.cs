@@ -31,13 +31,13 @@
             this.tabController = new System.Windows.Forms.TabControl();
             this.booksTab = new System.Windows.Forms.TabPage();
             this.bookSearchTypeGroupBox = new System.Windows.Forms.GroupBox();
+            this.isbnRadioButton = new System.Windows.Forms.RadioButton();
             this.authorOrTitleRadioButton = new System.Windows.Forms.RadioButton();
             this.authorRadioButton = new System.Windows.Forms.RadioButton();
             this.titleRadioButton = new System.Windows.Forms.RadioButton();
             this.bookSearchTxt = new System.Windows.Forms.TextBox();
             this.btnBookSearch = new System.Windows.Forms.Button();
             this.bookSearchResultsGroupBox = new System.Windows.Forms.GroupBox();
-            this.bookSearchResultsList = new System.Windows.Forms.FlowLayoutPanel();
             this.bookLoanTab = new System.Windows.Forms.TabPage();
             this.bookLoanSearchText = new System.Windows.Forms.TextBox();
             this.btnBookLoanSearch = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.btnFineSearch = new System.Windows.Forms.Button();
             this.fineSearchResultsGroupBox = new System.Windows.Forms.GroupBox();
             this.fineSearchResultList = new System.Windows.Forms.FlowLayoutPanel();
-            this.isbnRadioButton = new System.Windows.Forms.RadioButton();
+            this.bookSearchResultsList = new System.Windows.Forms.FlowLayoutPanel();
             this.tabController.SuspendLayout();
             this.booksTab.SuspendLayout();
             this.bookSearchTypeGroupBox.SuspendLayout();
@@ -100,6 +100,16 @@
             this.bookSearchTypeGroupBox.TabIndex = 3;
             this.bookSearchTypeGroupBox.TabStop = false;
             this.bookSearchTypeGroupBox.Text = "Search Type";
+            // 
+            // isbnRadioButton
+            // 
+            this.isbnRadioButton.AutoSize = true;
+            this.isbnRadioButton.Location = new System.Drawing.Point(35, 88);
+            this.isbnRadioButton.Name = "isbnRadioButton";
+            this.isbnRadioButton.Size = new System.Drawing.Size(45, 17);
+            this.isbnRadioButton.TabIndex = 3;
+            this.isbnRadioButton.Text = "Isbn";
+            this.isbnRadioButton.UseVisualStyleBackColor = true;
             // 
             // authorOrTitleRadioButton
             // 
@@ -164,18 +174,6 @@
             this.bookSearchResultsGroupBox.TabStop = false;
             this.bookSearchResultsGroupBox.Text = "Search Results";
             // 
-            // bookSearchResultsList
-            // 
-            this.bookSearchResultsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bookSearchResultsList.AutoScroll = true;
-            this.bookSearchResultsList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.bookSearchResultsList.Location = new System.Drawing.Point(6, 19);
-            this.bookSearchResultsList.Name = "bookSearchResultsList";
-            this.bookSearchResultsList.Size = new System.Drawing.Size(554, 349);
-            this.bookSearchResultsList.TabIndex = 0;
-            // 
             // bookLoanTab
             // 
             this.bookLoanTab.Controls.Add(this.bookLoanSearchText);
@@ -222,9 +220,7 @@
             // 
             // bookLoanSearchResultsList
             // 
-            this.bookLoanSearchResultsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bookLoanSearchResultsList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.bookLoanSearchResultsList.AutoScroll = true;
             this.bookLoanSearchResultsList.Location = new System.Drawing.Point(6, 19);
             this.bookLoanSearchResultsList.Name = "bookLoanSearchResultsList";
@@ -277,24 +273,21 @@
             // 
             // fineSearchResultList
             // 
-            this.fineSearchResultList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fineSearchResultList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.fineSearchResultList.AutoScroll = true;
             this.fineSearchResultList.Location = new System.Drawing.Point(6, 19);
             this.fineSearchResultList.Name = "fineSearchResultList";
             this.fineSearchResultList.Size = new System.Drawing.Size(554, 349);
             this.fineSearchResultList.TabIndex = 2;
             // 
-            // isbnRadioButton
+            // bookSearchResultsList
             // 
-            this.isbnRadioButton.AutoSize = true;
-            this.isbnRadioButton.Location = new System.Drawing.Point(35, 88);
-            this.isbnRadioButton.Name = "isbnRadioButton";
-            this.isbnRadioButton.Size = new System.Drawing.Size(45, 17);
-            this.isbnRadioButton.TabIndex = 3;
-            this.isbnRadioButton.Text = "Isbn";
-            this.isbnRadioButton.UseVisualStyleBackColor = true;
+            this.bookSearchResultsList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.bookSearchResultsList.AutoScroll = true;
+            this.bookSearchResultsList.Location = new System.Drawing.Point(6, 19);
+            this.bookSearchResultsList.Name = "bookSearchResultsList";
+            this.bookSearchResultsList.Size = new System.Drawing.Size(554, 349);
+            this.bookSearchResultsList.TabIndex = 2;
             // 
             // LibraryForm
             // 
@@ -328,7 +321,6 @@
         private System.Windows.Forms.TabPage finesTab;
         private System.Windows.Forms.GroupBox bookSearchResultsGroupBox;
         private System.Windows.Forms.GroupBox bookLoanSearchResultsBox;
-        private System.Windows.Forms.FlowLayoutPanel bookSearchResultsList;
         private System.Windows.Forms.GroupBox fineSearchResultsGroupBox;
         private System.Windows.Forms.FlowLayoutPanel bookLoanSearchResultsList;
         private System.Windows.Forms.FlowLayoutPanel fineSearchResultList;
@@ -343,6 +335,7 @@
         private System.Windows.Forms.RadioButton authorOrTitleRadioButton;
         private System.Windows.Forms.RadioButton authorRadioButton;
         private System.Windows.Forms.RadioButton isbnRadioButton;
+        private System.Windows.Forms.FlowLayoutPanel bookSearchResultsList;
     }
 }
 

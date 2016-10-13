@@ -50,10 +50,37 @@
     <Compile Include="LibraryForm.Designer.cs">
       <DependentUpon>LibraryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="List Items\BookItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="List Items\BookItem.Designer.cs">
+      <DependentUpon>BookItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List Items\BookLoanItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="List Items\BookLoanItem.Designer.cs">
+      <DependentUpon>BookLoanItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List Items\FineItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="List Items\FineItem.Designer.cs">
+      <DependentUpon>FineItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LibraryForm.resx">
       <DependentUpon>LibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Items\BookItem.resx">
+      <DependentUpon>BookItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Items\BookLoanItem.resx">
+      <DependentUpon>BookLoanItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List Items\FineItem.resx">
+      <DependentUpon>FineItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

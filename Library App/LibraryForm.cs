@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Library_Entities;
+using Library_App_Controls;
 
 namespace Library_App
 {
@@ -17,6 +18,18 @@ namespace Library_App
         public LibraryForm()
         {
             InitializeComponent();
+
+            bookLoanSearchResultsList.Controls.Add(new BookItem());
+            bookLoanSearchResultsList.Controls.Add(new BookItem());
+            bookLoanSearchResultsList.Controls.Add(new BookItem());
+            bookLoanSearchResultsList.Controls.Add(new BookItem());
+            bookLoanSearchResultsList.Controls.Add(new BookItem());
+            bookLoanSearchResultsList.Controls.Add(new BookItem());
+
+            foreach (Control c in bookLoanSearchResultsList.Controls)
+            {
+                c.Anchor = AnchorStyles.None;
+            }
         }
     }
 }
