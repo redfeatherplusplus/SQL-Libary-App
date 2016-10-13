@@ -68,6 +68,12 @@
     <Compile Include="List Items\FineItem.Designer.cs">
       <DependentUpon>FineItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\AddNewBorrowerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddNewBorrowerForm.Designer.cs">
+      <DependentUpon>AddNewBorrowerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\CheckoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="List Items\FineItem.resx">
       <DependentUpon>FineItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddNewBorrowerForm.resx">
+      <DependentUpon>AddNewBorrowerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>

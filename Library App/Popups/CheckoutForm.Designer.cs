@@ -86,7 +86,7 @@
             // btnCheckoutClose
             // 
             this.btnCheckoutClose.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCheckoutClose.Location = new System.Drawing.Point(92, 57);
+            this.btnCheckoutClose.Location = new System.Drawing.Point(92, 58);
             this.btnCheckoutClose.Name = "btnCheckoutClose";
             this.btnCheckoutClose.Size = new System.Drawing.Size(114, 24);
             this.btnCheckoutClose.TabIndex = 5;

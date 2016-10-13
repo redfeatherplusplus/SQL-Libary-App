@@ -36,7 +36,7 @@ namespace Library_App
             try
             {
                 DAO_Mediator.Instance.checkOutBook(tbIsbn.Text, tbCardID.Text);
-                MessageBox.Show("Checkout success! Any existing searches are now stale.");
+                MessageBox.Show("Check-out success! Any existing searches are now stale.");
             }
             catch (Exception exception)
             {
@@ -49,7 +49,7 @@ namespace Library_App
             try
             {
                 DAO_Mediator.Instance.checkOutBook(tbIsbn.Text, tbCardID.Text);
-                MessageBox.Show("Checkout success! Any existing searches are now stale.");
+                MessageBox.Show("Check-out success! Any existing searches are now stale.");
             }
             catch (Exception exception)
             {

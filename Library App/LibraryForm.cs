@@ -55,19 +55,19 @@ namespace Library_App
             List<Book> books = null;
             if (rbSearchTitle.Checked)
             {
-                books = mediator.searchBook(bookSearchTxt.Text, BookSearchType.Title);
+                books = mediator.searchBook(bookSearchText.Text, BookSearchType.Title);
             }
             else if (rbSearchAuthor.Checked)
             {
-                books = mediator.searchBook(bookSearchTxt.Text, BookSearchType.Author);
+                books = mediator.searchBook(bookSearchText.Text, BookSearchType.Author);
             }
-            else if (rbSearchBoth.Checked)
+            else if (rbSearchTitleAndAuthor.Checked)
             {
-                books = mediator.searchBook(bookSearchTxt.Text, BookSearchType.Both);
+                books = mediator.searchBook(bookSearchText.Text, BookSearchType.Both);
             }
             else if (rbSearchIsbn.Checked)
             {
-                books = mediator.searchBook(bookSearchTxt.Text, BookSearchType.Isbn);
+                books = mediator.searchBook(bookSearchText.Text, BookSearchType.Isbn);
             }
             else
             {
@@ -106,6 +106,7 @@ namespace Library_App
                 tabController.SelectedTab = bookLoanTab;
 
                 bookLoanSearchResultsList.Controls.Clear();
+                rbSearchOverdueOrNotOverdue.Checked = true;
                 bookLoanItem = null;
 
                 List<BookLoan> bookLoans = mediator.searchBookLoan(BookItem.Book);
@@ -121,6 +122,68 @@ namespace Library_App
                 else
                 {
                     bookLoanSearchResultsGroupBox.Text = "No Results";
+                }
+            }
+        }
+
+        private void btnBookLoanSearch_Click(object sender, EventArgs e)
+        {
+            bookLoanSearchResultsList.Controls.Clear();
+            bookLoanItem = null;
+
+            List<BookLoan> bookLoans = null;
+            if (rbSearchOverdue.Checked)
+            {
+                bookLoans = mediator.searchBookLoan(bookLoanSearchText.Text, BookLoanSearchType.Overdue);
+            }
+            else if (rbSearchNotOverdue.Checked)
+            {
+                bookLoans = mediator.searchBookLoan(bookLoanSearchText.Text, BookLoanSearchType.NotOverdue);
+            }
+            else if (rbSearchOverdueOrNotOverdue.Checked)
+            {
+                bookLoans = mediator.searchBookLoan(bookLoanSearchText.Text, BookLoanSearchType.Both);
+            }
+            else if (rbSearchCheckedIn.Checked)
+            {
+                bookLoans = mediator.searchBookLoan(bookLoanSearchText.Text, BookLoanSearchType.CheckedIn);
+            }
+            else
+            {
+                throw new InvalidOperationException("Searching using undefined search type");
+            }
+
+            if (null != bookLoans && 0 != bookLoans.Count)
+            {
+                foreach (BookLoan bookLoan in bookLoans)
+                {
+                    bookLoanSearchResultsList.Controls.Add(new BookLoanItem(bookLoan, this));
+                }
+
+                bookLoanSearchResultsGroupBox.Text = "Search Results";
+            }
+            else
+            {
+                bookLoanSearchResultsGroupBox.Text = "No Results";
+            }
+        }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            if (null == bookLoanItem) 
+            {
+                MessageBox.Show("Please select a book loan first");
+            }
+            else
+            {
+                try
+                {
+                    mediator.checkInBook(bookLoanItem.BookLoan.Isbn);
+                    MessageBox.Show("Check-in success! Any existing searches are now stale.");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
                 }
             }
         }

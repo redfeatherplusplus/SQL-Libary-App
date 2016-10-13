@@ -35,14 +35,19 @@
             this.btnBookCheckout = new System.Windows.Forms.Button();
             this.bookSearchTypeGroupBox = new System.Windows.Forms.GroupBox();
             this.rbSearchIsbn = new System.Windows.Forms.RadioButton();
-            this.rbSearchBoth = new System.Windows.Forms.RadioButton();
+            this.rbSearchTitleAndAuthor = new System.Windows.Forms.RadioButton();
             this.rbSearchAuthor = new System.Windows.Forms.RadioButton();
             this.rbSearchTitle = new System.Windows.Forms.RadioButton();
-            this.bookSearchTxt = new System.Windows.Forms.TextBox();
+            this.bookSearchText = new System.Windows.Forms.TextBox();
             this.btnBookSearch = new System.Windows.Forms.Button();
             this.bookSearchResultsGroupBox = new System.Windows.Forms.GroupBox();
             this.bookSearchResultsList = new System.Windows.Forms.FlowLayoutPanel();
             this.bookLoanTab = new System.Windows.Forms.TabPage();
+            this.gbSearchType = new System.Windows.Forms.GroupBox();
+            this.rbSearchCheckedIn = new System.Windows.Forms.RadioButton();
+            this.rbSearchOverdueOrNotOverdue = new System.Windows.Forms.RadioButton();
+            this.rbSearchNotOverdue = new System.Windows.Forms.RadioButton();
+            this.rbSearchOverdue = new System.Windows.Forms.RadioButton();
             this.bookLoanSearchText = new System.Windows.Forms.TextBox();
             this.btnBookLoanSearch = new System.Windows.Forms.Button();
             this.bookLoanSearchResultsGroupBox = new System.Windows.Forms.GroupBox();
@@ -52,15 +57,20 @@
             this.btnFineSearch = new System.Windows.Forms.Button();
             this.fineSearchResultsGroupBox = new System.Windows.Forms.GroupBox();
             this.fineSearchResultList = new System.Windows.Forms.FlowLayoutPanel();
+            this.gbBorrowerManagement = new System.Windows.Forms.GroupBox();
+            this.btnAddNewBorrower = new System.Windows.Forms.Button();
+            this.btnCheckInBook = new System.Windows.Forms.Button();
             this.tabController.SuspendLayout();
             this.booksTab.SuspendLayout();
             this.bookCheckingGroupBox.SuspendLayout();
             this.bookSearchTypeGroupBox.SuspendLayout();
             this.bookSearchResultsGroupBox.SuspendLayout();
             this.bookLoanTab.SuspendLayout();
+            this.gbSearchType.SuspendLayout();
             this.bookLoanSearchResultsGroupBox.SuspendLayout();
             this.finesTab.SuspendLayout();
             this.fineSearchResultsGroupBox.SuspendLayout();
+            this.gbBorrowerManagement.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabController
@@ -84,7 +94,7 @@
             // 
             this.booksTab.Controls.Add(this.bookCheckingGroupBox);
             this.booksTab.Controls.Add(this.bookSearchTypeGroupBox);
-            this.booksTab.Controls.Add(this.bookSearchTxt);
+            this.booksTab.Controls.Add(this.bookSearchText);
             this.booksTab.Controls.Add(this.btnBookSearch);
             this.booksTab.Controls.Add(this.bookSearchResultsGroupBox);
             this.booksTab.Location = new System.Drawing.Point(4, 22);
@@ -135,7 +145,7 @@
             // 
             this.bookSearchTypeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bookSearchTypeGroupBox.Controls.Add(this.rbSearchIsbn);
-            this.bookSearchTypeGroupBox.Controls.Add(this.rbSearchBoth);
+            this.bookSearchTypeGroupBox.Controls.Add(this.rbSearchTitleAndAuthor);
             this.bookSearchTypeGroupBox.Controls.Add(this.rbSearchAuthor);
             this.bookSearchTypeGroupBox.Controls.Add(this.rbSearchTitle);
             this.bookSearchTypeGroupBox.Location = new System.Drawing.Point(575, 210);
@@ -156,15 +166,15 @@
             this.rbSearchIsbn.Text = "Isbn";
             this.rbSearchIsbn.UseVisualStyleBackColor = true;
             // 
-            // rbSearchBoth
+            // rbSearchTitleAndAuthor
             // 
-            this.rbSearchBoth.AutoSize = true;
-            this.rbSearchBoth.Location = new System.Drawing.Point(35, 65);
-            this.rbSearchBoth.Name = "rbSearchBoth";
-            this.rbSearchBoth.Size = new System.Drawing.Size(47, 17);
-            this.rbSearchBoth.TabIndex = 2;
-            this.rbSearchBoth.Text = "Both";
-            this.rbSearchBoth.UseVisualStyleBackColor = true;
+            this.rbSearchTitleAndAuthor.AutoSize = true;
+            this.rbSearchTitleAndAuthor.Location = new System.Drawing.Point(35, 65);
+            this.rbSearchTitleAndAuthor.Name = "rbSearchTitleAndAuthor";
+            this.rbSearchTitleAndAuthor.Size = new System.Drawing.Size(47, 17);
+            this.rbSearchTitleAndAuthor.TabIndex = 2;
+            this.rbSearchTitleAndAuthor.Text = "Both";
+            this.rbSearchTitleAndAuthor.UseVisualStyleBackColor = true;
             // 
             // rbSearchAuthor
             // 
@@ -188,13 +198,13 @@
             this.rbSearchTitle.Text = "Title";
             this.rbSearchTitle.UseVisualStyleBackColor = true;
             // 
-            // bookSearchTxt
+            // bookSearchText
             // 
-            this.bookSearchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bookSearchTxt.Location = new System.Drawing.Point(575, 328);
-            this.bookSearchTxt.Name = "bookSearchTxt";
-            this.bookSearchTxt.Size = new System.Drawing.Size(137, 20);
-            this.bookSearchTxt.TabIndex = 2;
+            this.bookSearchText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bookSearchText.Location = new System.Drawing.Point(575, 328);
+            this.bookSearchText.Name = "bookSearchText";
+            this.bookSearchText.Size = new System.Drawing.Size(137, 20);
+            this.bookSearchText.TabIndex = 2;
             // 
             // btnBookSearch
             // 
@@ -234,6 +244,8 @@
             // 
             // bookLoanTab
             // 
+            this.bookLoanTab.Controls.Add(this.gbBorrowerManagement);
+            this.bookLoanTab.Controls.Add(this.gbSearchType);
             this.bookLoanTab.Controls.Add(this.bookLoanSearchText);
             this.bookLoanTab.Controls.Add(this.btnBookLoanSearch);
             this.bookLoanTab.Controls.Add(this.bookLoanSearchResultsGroupBox);
@@ -245,6 +257,63 @@
             this.bookLoanTab.TabIndex = 1;
             this.bookLoanTab.Text = "BOOK LOANS";
             this.bookLoanTab.UseVisualStyleBackColor = true;
+            // 
+            // gbSearchType
+            // 
+            this.gbSearchType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbSearchType.Controls.Add(this.rbSearchCheckedIn);
+            this.gbSearchType.Controls.Add(this.rbSearchOverdueOrNotOverdue);
+            this.gbSearchType.Controls.Add(this.rbSearchNotOverdue);
+            this.gbSearchType.Controls.Add(this.rbSearchOverdue);
+            this.gbSearchType.Location = new System.Drawing.Point(575, 210);
+            this.gbSearchType.Name = "gbSearchType";
+            this.gbSearchType.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gbSearchType.Size = new System.Drawing.Size(137, 112);
+            this.gbSearchType.TabIndex = 4;
+            this.gbSearchType.TabStop = false;
+            this.gbSearchType.Text = "Search Type";
+            // 
+            // rbSearchCheckedIn
+            // 
+            this.rbSearchCheckedIn.AutoSize = true;
+            this.rbSearchCheckedIn.Location = new System.Drawing.Point(35, 88);
+            this.rbSearchCheckedIn.Name = "rbSearchCheckedIn";
+            this.rbSearchCheckedIn.Size = new System.Drawing.Size(79, 17);
+            this.rbSearchCheckedIn.TabIndex = 3;
+            this.rbSearchCheckedIn.Text = "Checked in";
+            this.rbSearchCheckedIn.UseVisualStyleBackColor = true;
+            // 
+            // rbSearchOverdueOrNotOverdue
+            // 
+            this.rbSearchOverdueOrNotOverdue.AutoSize = true;
+            this.rbSearchOverdueOrNotOverdue.Checked = true;
+            this.rbSearchOverdueOrNotOverdue.Location = new System.Drawing.Point(35, 65);
+            this.rbSearchOverdueOrNotOverdue.Name = "rbSearchOverdueOrNotOverdue";
+            this.rbSearchOverdueOrNotOverdue.Size = new System.Drawing.Size(47, 17);
+            this.rbSearchOverdueOrNotOverdue.TabIndex = 2;
+            this.rbSearchOverdueOrNotOverdue.TabStop = true;
+            this.rbSearchOverdueOrNotOverdue.Text = "Both";
+            this.rbSearchOverdueOrNotOverdue.UseVisualStyleBackColor = true;
+            // 
+            // rbSearchNotOverdue
+            // 
+            this.rbSearchNotOverdue.AutoSize = true;
+            this.rbSearchNotOverdue.Location = new System.Drawing.Point(35, 42);
+            this.rbSearchNotOverdue.Name = "rbSearchNotOverdue";
+            this.rbSearchNotOverdue.Size = new System.Drawing.Size(84, 17);
+            this.rbSearchNotOverdue.TabIndex = 1;
+            this.rbSearchNotOverdue.Text = "Not overdue";
+            this.rbSearchNotOverdue.UseVisualStyleBackColor = true;
+            // 
+            // rbSearchOverdue
+            // 
+            this.rbSearchOverdue.AutoSize = true;
+            this.rbSearchOverdue.Location = new System.Drawing.Point(35, 19);
+            this.rbSearchOverdue.Name = "rbSearchOverdue";
+            this.rbSearchOverdue.Size = new System.Drawing.Size(66, 17);
+            this.rbSearchOverdue.TabIndex = 0;
+            this.rbSearchOverdue.Text = "Overdue";
+            this.rbSearchOverdue.UseVisualStyleBackColor = true;
             // 
             // bookLoanSearchText
             // 
@@ -263,6 +332,7 @@
             this.btnBookLoanSearch.TabIndex = 2;
             this.btnBookLoanSearch.Text = "Search";
             this.btnBookLoanSearch.UseVisualStyleBackColor = true;
+            this.btnBookLoanSearch.Click += new System.EventHandler(this.btnBookLoanSearch_Click);
             // 
             // bookLoanSearchResultsGroupBox
             // 
@@ -346,6 +416,40 @@
             this.fineSearchResultList.Size = new System.Drawing.Size(554, 349);
             this.fineSearchResultList.TabIndex = 2;
             // 
+            // gbBorrowerManagement
+            // 
+            this.gbBorrowerManagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBorrowerManagement.Controls.Add(this.btnAddNewBorrower);
+            this.gbBorrowerManagement.Controls.Add(this.btnCheckInBook);
+            this.gbBorrowerManagement.Location = new System.Drawing.Point(575, 6);
+            this.gbBorrowerManagement.Name = "gbBorrowerManagement";
+            this.gbBorrowerManagement.Size = new System.Drawing.Size(137, 198);
+            this.gbBorrowerManagement.TabIndex = 6;
+            this.gbBorrowerManagement.TabStop = false;
+            this.gbBorrowerManagement.Text = "Borrower Management";
+            // 
+            // btnAddNewBorrower
+            // 
+            this.btnAddNewBorrower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewBorrower.Location = new System.Drawing.Point(6, 48);
+            this.btnAddNewBorrower.Name = "btnAddNewBorrower";
+            this.btnAddNewBorrower.Size = new System.Drawing.Size(125, 23);
+            this.btnAddNewBorrower.TabIndex = 5;
+            this.btnAddNewBorrower.Text = "Add New Borrower";
+            this.btnAddNewBorrower.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckInBook
+            // 
+            this.btnCheckInBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCheckInBook.Location = new System.Drawing.Point(6, 19);
+            this.btnCheckInBook.Name = "btnCheckInBook";
+            this.btnCheckInBook.Size = new System.Drawing.Size(125, 23);
+            this.btnCheckInBook.TabIndex = 4;
+            this.btnCheckInBook.Text = "Check in book";
+            this.btnCheckInBook.UseVisualStyleBackColor = true;
+            this.btnCheckInBook.Click += new System.EventHandler(this.btnCheckIn_Click);
+            // 
             // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,10 +467,13 @@
             this.bookSearchResultsGroupBox.ResumeLayout(false);
             this.bookLoanTab.ResumeLayout(false);
             this.bookLoanTab.PerformLayout();
+            this.gbSearchType.ResumeLayout(false);
+            this.gbSearchType.PerformLayout();
             this.bookLoanSearchResultsGroupBox.ResumeLayout(false);
             this.finesTab.ResumeLayout(false);
             this.finesTab.PerformLayout();
             this.fineSearchResultsGroupBox.ResumeLayout(false);
+            this.gbBorrowerManagement.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -384,19 +491,27 @@
         private System.Windows.Forms.FlowLayoutPanel fineSearchResultList;
         private System.Windows.Forms.Button btnBookSearch;
         private System.Windows.Forms.Button btnBookLoanSearch;
-        private System.Windows.Forms.TextBox bookSearchTxt;
+        private System.Windows.Forms.TextBox bookSearchText;
         private System.Windows.Forms.TextBox bookLoanSearchText;
         private System.Windows.Forms.TextBox fineSearchText;
         private System.Windows.Forms.Button btnFineSearch;
         private System.Windows.Forms.GroupBox bookSearchTypeGroupBox;
         private System.Windows.Forms.RadioButton rbSearchTitle;
-        private System.Windows.Forms.RadioButton rbSearchBoth;
+        private System.Windows.Forms.RadioButton rbSearchTitleAndAuthor;
         private System.Windows.Forms.RadioButton rbSearchAuthor;
         private System.Windows.Forms.RadioButton rbSearchIsbn;
         private System.Windows.Forms.FlowLayoutPanel bookSearchResultsList;
         private System.Windows.Forms.Button btnBookCheckout;
         private System.Windows.Forms.GroupBox bookCheckingGroupBox;
         private System.Windows.Forms.Button btnFindBookLoans;
+        private System.Windows.Forms.GroupBox gbSearchType;
+        private System.Windows.Forms.RadioButton rbSearchCheckedIn;
+        private System.Windows.Forms.RadioButton rbSearchOverdueOrNotOverdue;
+        private System.Windows.Forms.RadioButton rbSearchNotOverdue;
+        private System.Windows.Forms.RadioButton rbSearchOverdue;
+        private System.Windows.Forms.GroupBox gbBorrowerManagement;
+        private System.Windows.Forms.Button btnAddNewBorrower;
+        private System.Windows.Forms.Button btnCheckInBook;
     }
 }
 
