@@ -20,7 +20,7 @@ namespace Library_DAO_Mediator
             get { return DAO_Error_Handler.instance; }
         }
 
-        public string getMessage(Exception exception) 
+        public string parse(Exception exception) 
         {
             return exception.Message;
         }

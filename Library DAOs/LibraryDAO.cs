@@ -36,15 +36,6 @@ namespace Library_DAOs
                     command.Connection.Open();
                     command.ExecuteNonQuery();
                 }
-                catch (MySqlException ex)
-                {
-                    Console.WriteLine(ex.ErrorCode);
-                    Console.WriteLine(ex.HResult);
-                    Console.WriteLine(ex.Source);
-                    Console.WriteLine(ex.Message);
-                    Console.WriteLine(string.Join(";", ex.Data.Keys));
-                    Console.WriteLine(string.Join(";", ex.Data.Values));
-                }
                 finally
                 {
                     connection.Close();
@@ -63,14 +54,6 @@ namespace Library_DAOs
 
                     MySqlDataReader reader = command.ExecuteReader();
                     readerCallback(reader);
-                }
-                catch (MySqlException ex)
-                {
-                    Console.WriteLine(ex.ErrorCode);
-                    Console.WriteLine(ex.HResult);
-                    Console.WriteLine(ex.Source);
-                    Console.WriteLine(string.Join(";", ex.Data.Keys));
-                    Console.WriteLine(string.Join(";", ex.Data.Values));
                 }
                 finally
                 {

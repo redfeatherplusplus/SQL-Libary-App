@@ -42,7 +42,7 @@ namespace Library_DAOs
 
         public List<BookLoan> search(string cardID)
         {
-            return search(cardID, BookLoanSearchType.Overdue);
+            return search(cardID, BookLoanSearchType.Both);
         }
 
         public List<BookLoan> search(string cardID, BookLoanSearchType searchType)
@@ -53,18 +53,18 @@ namespace Library_DAOs
             ReaderCallback readerCallback = bookLoanCallback(bookLoans);
             ExecuteReader(query, readerCallback);
 
-            Console.WriteLine("BookLoan Count: " + bookLoans.Count + "\n");
-            foreach (BookLoan bookLoan in bookLoans)
-            {
-                Console.WriteLine(bookLoan.ToString());
-            }
+            //Console.WriteLine("BookLoan Count: " + bookLoans.Count + "\n");
+            //foreach (BookLoan bookLoan in bookLoans)
+            //{
+            //    Console.WriteLine(bookLoan.ToString());
+            //}
 
             return bookLoans;
         }
 
         public List<BookLoan> search(Book book)
         {
-            return search(book, BookLoanSearchType.Overdue);
+            return search(book, BookLoanSearchType.Both);
         }
 
         public List<BookLoan> search(Book book, BookLoanSearchType searchType)
@@ -75,11 +75,11 @@ namespace Library_DAOs
             ReaderCallback readerCallback = bookLoanCallback(bookLoans);
             ExecuteReader(query, readerCallback);
 
-            Console.WriteLine("BookLoan Count: " + bookLoans.Count + "\n");
-            foreach (BookLoan bookLoan in bookLoans)
-            {
-                Console.WriteLine(bookLoan.ToString());
-            }
+            //Console.WriteLine("BookLoan Count: " + bookLoans.Count + "\n");
+            //foreach (BookLoan bookLoan in bookLoans)
+            //{
+            //    Console.WriteLine(bookLoan.ToString());
+            //}
 
             return bookLoans;
         }

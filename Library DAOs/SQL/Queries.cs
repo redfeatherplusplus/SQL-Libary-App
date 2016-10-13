@@ -56,7 +56,7 @@ namespace Library_DAOs.SQL
                         "from book bk, authors au, book_authors ba " +
                         "where bk.Isbn = ba.Isbn " +
                         "and ba.Author_id = au.Author_id " +
-                        "and bk.Isbn = " + term + ") ";
+                        "and bk.Isbn = \"" + term + "\" ";
                 default:
                     throw new ArgumentException("Invalid Book Search Type: " + searchType);
             }
