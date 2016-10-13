@@ -1,4 +1,4 @@
-﻿namespace SQL_Library_Project.Popups
+﻿namespace Library_App
 {
     partial class AddNewBorrowerForm
     {
@@ -57,6 +57,7 @@
             this.btnAddBorrowerClose.TabIndex = 39;
             this.btnAddBorrowerClose.Text = "Add && Close";
             this.btnAddBorrowerClose.UseVisualStyleBackColor = true;
+            this.btnAddBorrowerClose.Click += new System.EventHandler(this.btnAddBorrowerClose_Click);
             // 
             // btnAddBorrower
             // 
@@ -67,6 +68,7 @@
             this.btnAddBorrower.TabIndex = 38;
             this.btnAddBorrower.Text = "Add";
             this.btnAddBorrower.UseVisualStyleBackColor = true;
+            this.btnAddBorrower.Click += new System.EventHandler(this.btnAddBorrower_Click);
             // 
             // tbPhone
             // 

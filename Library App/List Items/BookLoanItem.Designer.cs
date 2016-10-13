@@ -186,6 +186,7 @@
             this.selectedRadioButon.TabIndex = 2;
             this.selectedRadioButon.TabStop = true;
             this.selectedRadioButon.UseVisualStyleBackColor = true;
+            this.selectedRadioButon.Click += new System.EventHandler(this.BookLoanItem_Click);
             // 
             // BookLoanItem
             // 

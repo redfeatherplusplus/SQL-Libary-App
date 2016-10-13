@@ -129,6 +129,7 @@
             this.Controls.Add(this.bookNameGroupBox);
             this.Name = "FineItem";
             this.Size = new System.Drawing.Size(530, 60);
+            this.Click += new System.EventHandler(this.selectedRadioButon_Click);
             this.bookNameGroupBox.ResumeLayout(false);
             this.bookNameGroupBox.PerformLayout();
             this.ResumeLayout(false);

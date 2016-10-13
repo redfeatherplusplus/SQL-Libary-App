@@ -179,13 +179,19 @@ namespace Library_App
                 try
                 {
                     mediator.checkInBook(bookLoanItem.BookLoan.Isbn);
-                    MessageBox.Show("Check-in success! Any existing searches are now stale.");
+                    MessageBox.Show("Check-in success!");
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
                 }
             }
+        }
+
+        private void btnAddNewBorrower_Click(object sender, EventArgs e)
+        {
+            AddNewBorrowerForm addBorrowerForm = new AddNewBorrowerForm();
+            addBorrowerForm.ShowDialog(this);
         }
     }
 }

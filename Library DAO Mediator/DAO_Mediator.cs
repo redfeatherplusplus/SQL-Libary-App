@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Library_DAOs;
 using Library_Entities;
 
-namespace Library_App
+namespace Library_DAO_Mediator
 {
     public class DAO_Mediator
     {

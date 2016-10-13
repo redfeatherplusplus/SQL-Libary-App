@@ -438,6 +438,7 @@
             this.btnAddNewBorrower.TabIndex = 5;
             this.btnAddNewBorrower.Text = "Add New Borrower";
             this.btnAddNewBorrower.UseVisualStyleBackColor = true;
+            this.btnAddNewBorrower.Click += new System.EventHandler(this.btnAddNewBorrower_Click);
             // 
             // btnCheckInBook
             // 

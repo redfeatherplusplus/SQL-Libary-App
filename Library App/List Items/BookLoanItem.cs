@@ -57,6 +57,7 @@ namespace Library_App
             }
 
             parent.BookLoanItem = this;
+            Console.WriteLine("pressed RB: " + (null == this));
         }
 
         //getters and setters
