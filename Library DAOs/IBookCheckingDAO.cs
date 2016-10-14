@@ -13,7 +13,7 @@ namespace Library_DAOs
     public interface IBookCheckingDAO
     {
         void checkOut(String isbn, String cardID);
-        void checkIn(String loanID);
+        void checkIn(int loanID);
         List<Book> search(String term);
         List<Book> search(String term, BookSearchType searchType);
     }

@@ -37,7 +37,7 @@ namespace Library_DAO_Mediator
         {
             bookCheckingDAO.checkOut(isbn, cardID);
         }
-        public void checkInBook(string loanID)
+        public void checkInBook(int loanID)
         {
             bookCheckingDAO.checkIn(loanID);
         }

@@ -40,7 +40,7 @@ namespace Library_App
             }
             catch (Exception exception)
             {
-                MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
+                MessageBox.Show(DAO_Error_Handler.Instance.getMessage(exception));
             }
         }
 
@@ -53,7 +53,7 @@ namespace Library_App
             }
             catch (Exception exception)
             {
-                MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
+                MessageBox.Show(DAO_Error_Handler.Instance.getMessage(exception));
             }
 
             this.Close();

@@ -30,23 +30,6 @@ namespace Library_App
             mediator = DAO_Mediator.Instance;
         }
 
-        //getters and setters
-        public BookItem BookItem
-        {
-            get { return bookItem; }
-            set { bookItem = value; }
-        }
-        public BookLoanItem BookLoanItem
-        {
-            get { return bookLoanItem; }
-            set { bookLoanItem = value; }
-        }
-        public FineItem FineItem
-        {
-            get { return fineItem; }
-            set { fineItem = value; }
-        }
-
         private void btnBookSearch_Click(object sender, EventArgs e)
         {
             bookSearchResultList.Controls.Clear();
@@ -178,12 +161,12 @@ namespace Library_App
             {
                 try
                 {
-                    mediator.checkInBook(bookLoanItem.BookLoan.Isbn);
+                    mediator.checkInBook(bookLoanItem.BookLoan.Loan_id);
                     MessageBox.Show("Check-in success!");
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
+                    MessageBox.Show(DAO_Error_Handler.Instance.getMessage(exception));
                 }
             }
         }
@@ -247,9 +230,26 @@ namespace Library_App
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
+                    MessageBox.Show(DAO_Error_Handler.Instance.getMessage(exception));
                 }
             }
+        }
+
+        //getters and setters
+        public BookItem BookItem
+        {
+            get { return bookItem; }
+            set { bookItem = value; }
+        }
+        public BookLoanItem BookLoanItem
+        {
+            get { return bookLoanItem; }
+            set { bookLoanItem = value; }
+        }
+        public FineItem FineItem
+        {
+            get { return fineItem; }
+            set { fineItem = value; }
         }
     }
 }

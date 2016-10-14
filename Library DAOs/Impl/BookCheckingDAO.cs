@@ -19,7 +19,7 @@ namespace Library_DAOs
             ExecuteNonQuery(query);
         }
 
-        public void checkIn(string loanID)
+        public void checkIn(int loanID)
         {
             string query = Queries.BookCheckIn(loanID);
             ExecuteNonQuery(query);

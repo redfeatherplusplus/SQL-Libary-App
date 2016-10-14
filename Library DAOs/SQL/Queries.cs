@@ -17,7 +17,7 @@ namespace Library_DAOs.SQL
                 "values (" + isbn + ", " + cardID + ") ";
         }
 
-        public static string BookCheckIn(string loanID)
+        public static string BookCheckIn(int loanID)
         {
             return
                 "update book_loans " +
