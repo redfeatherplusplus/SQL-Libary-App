@@ -49,7 +49,7 @@ namespace Library_App
 
         private void btnBookSearch_Click(object sender, EventArgs e)
         {
-            bookSearchResultsList.Controls.Clear();
+            bookSearchResultList.Controls.Clear();
             bookItem = null;
 
             List<Book> books = null;
@@ -78,14 +78,14 @@ namespace Library_App
             {
                 foreach (Book book in books)
                 {
-                    bookSearchResultsList.Controls.Add(new BookItem(book, this));
+                    bookSearchResultList.Controls.Add(new BookItem(book, this));
                 }
             
-                bookSearchResultsGroupBox.Text = "Search Results";
+                bookSearchResultGroupBox.Text = "Search Results";
             }
             else 
             {
-                bookSearchResultsGroupBox.Text = "No Results";
+                bookSearchResultGroupBox.Text = "No Results";
             }
         }
 
@@ -105,7 +105,7 @@ namespace Library_App
             {
                 tabController.SelectedTab = bookLoanTab;
 
-                bookLoanSearchResultsList.Controls.Clear();
+                bookLoanSearchResultList.Controls.Clear();
                 rbSearchOverdueOrNotOverdue.Checked = true;
                 bookLoanItem = null;
 
@@ -114,21 +114,21 @@ namespace Library_App
                 {
                     foreach (BookLoan bookLoan in bookLoans)
                     {
-                        bookLoanSearchResultsList.Controls.Add(new BookLoanItem(bookLoan, this));
+                        bookLoanSearchResultList.Controls.Add(new BookLoanItem(bookLoan, this));
                     }
 
-                    bookLoanSearchResultsGroupBox.Text = "Search Results";
+                    bookLoanSearchResultGroupBox.Text = "Search Results";
                 }
                 else
                 {
-                    bookLoanSearchResultsGroupBox.Text = "No Results";
+                    bookLoanSearchResultGroupBox.Text = "No Results";
                 }
             }
         }
 
         private void btnBookLoanSearch_Click(object sender, EventArgs e)
         {
-            bookLoanSearchResultsList.Controls.Clear();
+            bookLoanSearchResultList.Controls.Clear();
             bookLoanItem = null;
 
             List<BookLoan> bookLoans = null;
@@ -157,14 +157,14 @@ namespace Library_App
             {
                 foreach (BookLoan bookLoan in bookLoans)
                 {
-                    bookLoanSearchResultsList.Controls.Add(new BookLoanItem(bookLoan, this));
+                    bookLoanSearchResultList.Controls.Add(new BookLoanItem(bookLoan, this));
                 }
 
-                bookLoanSearchResultsGroupBox.Text = "Search Results";
+                bookLoanSearchResultGroupBox.Text = "Search Results";
             }
             else
             {
-                bookLoanSearchResultsGroupBox.Text = "No Results";
+                bookLoanSearchResultGroupBox.Text = "No Results";
             }
         }
 
@@ -192,6 +192,64 @@ namespace Library_App
         {
             AddNewBorrowerForm addBorrowerForm = new AddNewBorrowerForm();
             addBorrowerForm.ShowDialog(this);
+        }
+
+        private void btnFineSearch_Click(object sender, EventArgs e)
+        {
+            fineSearchResultList.Controls.Clear();
+            fineItem = null;
+
+            List<Fine> fines = null;
+            if (rbSearchFinePaid.Checked)
+            {
+                fines = mediator.searchFine(fineSearchText.Text, FineSearchType.Paid);
+            }
+            else if (rbSearchFineUnpaid.Checked)
+            {
+                fines = mediator.searchFine(fineSearchText.Text, FineSearchType.Unpaid);
+            }
+            else if (rbSearchFinePaidOrUnpaid.Checked)
+            {
+                fines = mediator.searchFine(fineSearchText.Text, FineSearchType.PaidOrUnpaid);
+            }
+            else
+            {
+                throw new InvalidOperationException("Searching using undefined search type");
+            }
+
+            if (null != fines && 0 != fines.Count)
+            {
+                foreach (Fine fine in fines)
+                {
+                    fineSearchResultList.Controls.Add(new FineItem(fine, this));
+                }
+
+                fineSearchResultGroupBox.Text = "Search Results";
+            }
+            else
+            {
+                fineSearchResultGroupBox.Text = "No Results";
+            }
+        }
+
+        private void btnSetFinePaid_Click(object sender, EventArgs e)
+        {
+            if (null == fineItem || fineItem.Fine.Paid)
+            {
+                MessageBox.Show("Please select an unpaid fine first");
+            }
+            else
+            {
+                try
+                {
+                    mediator.setPaidFine(fineItem.Fine.Loan_id);
+                    MessageBox.Show("Set fine paid success!");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(DAO_Error_Handler.Instance.parse(exception));
+                }
+            }
         }
     }
 }

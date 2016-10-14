@@ -12,7 +12,7 @@ namespace Library_DAOs
 
     public interface IFineDAO
     {
-        void setPaid(string loanID);
+        void setPaid(int loanID);
         List<Fine> search(String cardID);
         List<Fine> search(String cardID, FineSearchType searchType);
     }

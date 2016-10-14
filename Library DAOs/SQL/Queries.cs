@@ -164,7 +164,7 @@ namespace Library_DAOs.SQL
                 (null != borrower.Phone ? "\"" + borrower.Phone + "\"" : "null") + ") ";
         }
 
-        public static string FineSetPaid(string loanID)
+        public static string FineSetPaid(int loanID)
         {
             return
                 "update fines " +

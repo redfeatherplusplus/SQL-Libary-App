@@ -75,7 +75,7 @@ namespace Library_DAO_Mediator
         }
 
         //fine methods
-        public void setPaidFine(string loanID)
+        public void setPaidFine(int loanID)
         {
             fineDAO.setPaid(loanID);
         }
